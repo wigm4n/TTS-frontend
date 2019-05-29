@@ -1,0 +1,11 @@
+{
+    "authenticationMethod": "none",
+    "routes": [{
+        "path": "/backend",
+        "target": {
+            "type": "destination",
+            "name": "call_java_backend"
+        },
+        "description": "sadasd"
+    }]
+}

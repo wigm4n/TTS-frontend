@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+ul {
+  padding: 0;
+}
+
+.main-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page-header h1 {
+  text-align: center;
+  font-weight: initial;
+  font-size: 40px;
+  color: #0741AE;
+  margin-top: 50px;
+}
+
+.page-footer-wrapper {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  bottom: 0;
+  color: #959595;
+  min-height: 60px;
+  /* border-top: solid rgba(0, 0, 0, .4) 2px; */
+  border-top: solid #0741AE 1px;
+
+  display: flex;
+  align-items: center;
+}
+
+
+.page-content {
+  width: 90%;
+  margin: 100px auto auto auto;
+  padding-bottom: 50px;
+}
+
+.page-input {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.page-input input {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.page-input input {
+  border: 1px solid #0741AE;
+}
+
+.page-input input::placeholder {
+  /* color: #0741AE; */
+}
+
+.page-input input:focus {
+  outline: none;
+  color: #0741AE;
+}
+
+.page-input button {
+  background-color: transparent;
+  width: 17%;
+  margin-left: 3%;
+  border-radius: 4px;
+  font-size: 14px;
+  color: white;
+  height: 43px;
+  background-color: #0741AE;
+}
+
+.page-input button:focus {
+  outline: 0;
+}
+
+.page-input button:hover {
+  outline: 0;
+  background-color: #0950D9;
+}
+
+.page-history {
+  width: 98%;
+  margin: 0 auto;
+}
+
+.page-history .page-history__list {
+  list-style: none;
+}
+
+.page-history .page-history__list li {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, .2);
+
+}
+
+.page-history .page-history__list li:first-of-type {
+  border-top-color: rgba(0, 0, 0, .4);
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-history__listTitle {
+  margin-top: 40px;
+  margin-left: 7px;
+  margin-bottom: -9px;
+  color: #959595;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.page-history__text {
+  color: gray;
+  margin-left: 1%;
+  width: 50%;
+  word-break: break-all;
+  margin-top: 10px;
+}
+
+.page-history__text div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.emptyPlaceholdertext {
+  color: gray;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 17px;
+}
+
+/* .page-history .page-history__list li audio {} */
+
+.page-footer {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.page-footer div {
+  text-align: center;
+}
+
+.page-footer a {
+  color: rgba(0, 0, 0, .77);
+}
+
+@media (max-width: 480px) {
+  .page-input button {
+    width: 30%;
+  }
+}
+
+@media (max-width: 695px) {
+  .page-history .page-history__list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page-history .page-history__list li audio {
+    margin-top: 10px;
+  }
+}
+
+
+/* TOOLTIP */
+.modules__tooltip {
+  padding-bottom: 3px;
+  word-spacing: 2px;
+  width: 100%;
+}
+
+.modules__tooltip::after {
+  background: linear-gradient(90deg, #00b09b, #1c6e84);
+  border-radius: 15px 0px 15px 15px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  color: #FFF;
+  content: attr(data-tooltip);
+  /* Главная часть */
+  margin-top: 30px;
+  margin-left: -355px;
+  opacity: 0;
+  padding: 10px;
+  font-size: 16px;
+  position: absolute;
+  visibility: hidden;
+  width: 350px;
+  line-height: 17px;
+
+  transition: all 0.6s ease-in-out;
+}
+
+.modules__tooltip:last-child::after {
+  margin-left: -420px;
+}
+
+.modules__tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* TOOLTIP */
