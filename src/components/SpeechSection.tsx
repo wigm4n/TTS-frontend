@@ -22,7 +22,7 @@ class Speech extends Component<any, ISpeechState> {
   }
   appendItem = () => {
     const term = this.state.term;
-    if (term && term.length < 200 && term.replace(/\s/g, '').length) {
+    if (term && term.length < 300 && term.replace(/\s/g, '').length) {
       if (!this.state.requestPending) {
         this.setState({ term: "", requestPending: true });
         const input: any = document.querySelector(".input");
@@ -49,11 +49,11 @@ class Speech extends Component<any, ISpeechState> {
             });
           });
       } else alert("Дождитесь ответа");
-    } else alert("Введите текст для озвучки (не более 200 символов)");
+    } else alert("Введите текст для озвучки (не более 300 символов)");
   }
   onInputChange(event: any) {
     let currentValue = event.target.value;
-    currentValue = currentValue.replace(/[^A-Za-zа-яА-Я0-9,.?!-@$%();:+='<>€\]\["/\/*{}| ]/g, '');
+    currentValue = currentValue.replace(/[^A-Za-zа-яА-ЯёЁ0-9,.?!%-@№$();:+='<>€\]\["/\/*{}| ]/g, '');
 
     let currentValueArr = currentValue.split('');
     currentValueArr = currentValueArr.map((char: string, index: number) => {
